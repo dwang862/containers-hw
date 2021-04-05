@@ -118,7 +118,7 @@ class NormalizedStrIter:
         self.n = n
 
     def __next__(self):
-        if self.n == (len(self.text)-1):
+        if self.n == (len(self.text) - 1):
             raise StopIteration
         else:
             self.n += 1
