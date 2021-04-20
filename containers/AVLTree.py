@@ -61,8 +61,9 @@ class AVLTree(BST):
         if not AVLTree._is_bst_satisfied(node):
             return False
         if AVLTree._balance_factor(node) in [-1, 0, 1]:
-            return ret and AVLTree._is_avl_satisfied(node.left) and\
-                   AVLTree._is_avl_satisfied(node.right)
+            right = AVLTree._is_avl_satisfied(node.right)
+            left = AVLTree._is_avl_satisfied(node.left)
+            return ret and left and right
         else:
             return False
 
