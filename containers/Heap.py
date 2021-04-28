@@ -73,10 +73,10 @@ class Heap(BinaryTree):
             return True
         if node.left:
             left = node.value <= node.left.value and\
-                    Heap._is_heap_satisfied(node.left)
+                Heap._is_heap_satisfied(node.left)
         if node.right:
             right = node.value <= node.right.value and\
-                    Heap._is_heap_satisfied(node.right)
+                Heap._is_heap_satisfied(node.right)
         return left and right
 
     def insert(self, value):
@@ -196,14 +196,14 @@ class Heap(BinaryTree):
                 node.right = None
             else:
                 rem_value, node.right = Heap._remove_bottom_right(
-                        node.right, path[1:])
+                    node.right, path[1:])
         if path[0] == '0':
             if len(path) == 1:
                 rem_value = node.left.value
                 node.left = None
             else:
                 rem_value, node.left = Heap._remove_bottom_right(
-                        node.left, path[1:])
+                    node.left, path[1:])
         print(rem_value, str(node))
         return rem_value, node
 
